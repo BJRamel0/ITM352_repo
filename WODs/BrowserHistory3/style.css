@@ -1,10 +1,8 @@
 h1, h2 {
     font-family: 'Oswald', sans-serif;
-    width: 950px;
 }
 p {
     font-family: 'Open Sans', sans-serif;
-    width: 950px;
 }
 
 body {
@@ -13,8 +11,29 @@ body {
     margin-bottom: 10px;
     margin-left: 50px;
     margin-right: 50px;
+    width: 950px;
     background-color: ivory;
 }
+
 img {
     float: left;
+}
+.left {
+    float: left;
+    width: 300px;
+    padding: 10px;
+    
+}
+.right {
+    float: right;
+    width: 300px;
+    padding: 10px;
+    
+}
+.center {
+    padding: 10px;
+}
+li {
+    display: inline;
+    margin-right: 100px;
 }
