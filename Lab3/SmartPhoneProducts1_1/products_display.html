@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway" rel="stylesheet">
 
     <link href="products-style.css" rel="stylesheet">
+
+    <style id="localStyle">.rotate img {animation-duration: 3s;}</style>
 </head>
 
 <body>
@@ -15,6 +17,9 @@
     <header>
         <h1>BJ's Used Smart Phone Store</h1>
     </header>
+    <div>
+        <input id='speedSlider' type='range' min=".1" max="5" step=".1" style="direction: rtl;" onchange="localStyle.innerHTML = '.rotate img {animation-duration: ' + speedSlider.value + 's;}';">
+    </div>
     <div>
         <aside>
             <div style="font-size:4rem;text-align:center;font-weight: bold;font-style: italic; color: white">
