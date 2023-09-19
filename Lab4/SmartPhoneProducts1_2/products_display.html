@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>Smart Phone Store</title>
-
+    <p style="text-align: center; font-weight: bold;">
+        Hits:<span id="hits_span">0</span>
+        Spins:<span id="spins_span">0</span>
+    </p>
+    
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway" rel="stylesheet">
     <link href="products-style.css" rel="stylesheet">
 
@@ -12,17 +16,16 @@
 
     <script>
         const store_name="BJ Ramel";
-        let hits=2;
-        let spins=1;
-        B
+    
     </script>
 
 </head>
 
-<body>
+<body onload="hits_span.innerHTML = hits; spins_span.innerHTML = spins;">
     
     <header>
         <h1><script>document.write(store_name+"'s Used Smart Phone Store")</script></h1>
+        
     </header>
     <div>
         <h3> Change image rotation speed:</h3>
@@ -37,32 +40,32 @@
         </aside>
 
         <main>
-            <section class="item" onmouseover="this.className='item rotate';" onclick="this.className='item';">
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" onclick="resetClassName(this); hits_span.innerHTML = hits++;"">
                 <h2>HTC</h2>
                 <p>$40.00</p>
                 <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg" alt="HTC Phones">
             </section>
            
             </section>
-            <section class="item" onmouseover="changeClassName(this)" onclick="resetClassName(this)">
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" onclick="resetClassName(this); hits_span.innerHTML = hits++;"">
                 <h2>Apple</h2>
                 <p>$75.00</p>
                 <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg">
             </section>
 
-            <section class="item" onmouseover="changeClassName(this)" onclick="resetClassName(this)">
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" onclick="resetClassName(this); hits_span.innerHTML = hits++;"">
                 <h2>Nokia</h2>
                 <p>$35.00</p>
                 <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg">
             </section>
 
-            <section class="item" onmouseover="changeClassName(this)" onclick="resetClassName(this)">
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" onclick="resetClassName(this); hits_span.innerHTML = hits++;"">
                 <h2>Samsung</h2>
                 <p>$45.00</p>
                 <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg">
             </section>
 
-            <section class="item" onmouseover="changeClassName(this)" onclick="resetClassName(this)">
+            <section class="item" onmouseover="changeClassName(this); spins_span.innerHTML = spins++;" onclick="resetClassName(this); hits_span.innerHTML = hits++;"">
                 <h2>Blackberry</td>
                 </h2>
                 <p>$10.00</p>
@@ -78,10 +81,18 @@
         function resetClassName(element) {
             element.className='item';
         }
-    
+        let hits=0;
+        let spins=1;
+        hits_span.innerHTML = hits; 
+        spins_span.innerHTML = spins;
     </script>
     <footer>
-        <h1>Your One Stop For Used Phones</h1>
+        <h1>
+            <script>
+                document.write("Your One Stop For Used Phones - "+store_name+"'s");
+            </script>
+        </h1>
     </footer>
 </body>
+
 </html>
