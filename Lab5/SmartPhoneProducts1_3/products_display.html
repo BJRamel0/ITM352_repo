@@ -17,6 +17,8 @@
 
     <script>
         const store_name="BJ Ramel";
+        const first_name="BJ";
+        const last_name="Ramel";
     
     </script>
 
@@ -24,9 +26,13 @@
 
 <body onload="hits_span.innerHTML = hits; spins_span.innerHTML = spins;">
     
-    <header>
-        <h1><script>document.write(store_name+"'s Used Smart Phone Store")</script></h1>
-        
+    <header style="text-align:center;">
+        <span style="font-size: 600%;">
+            <strong><script>document.write(first_name)</script></strong>
+            <em><script>document.write(last_name)</script></em>
+            's 
+        </span>
+        <h1>Used Smart Phone Store</h1>
     </header>
     <div>
         <h3> Change image rotation speed:</h3>
@@ -72,9 +78,19 @@
                 <p>$10.00</p>
                 <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg">
             </section>
-
         </main>
     </div>
+
+    <footer>
+        <h1>
+            <table border="1" style="margin-left: auto; margin-right: auto; text-align: center;">
+                <tbody><tr><th colspan="2"><h1>Your One Stop For Used Phones - D.P.'s</h1></th></tr>
+                <tr><td>1.</td><td><br>Copyright @ Dan Port</td></tr>
+                <tr><td>2.</td><td>2021</td></tr>
+                <tr><td>3.</td><td>11:15 AM</td></tr>
+            </tbody></table>
+    </footer>
+
     <script>
         function changeClassName(element) {
             element.className='item rotate';
@@ -82,18 +98,26 @@
         function resetClassName(element) {
             element.className='item';
         }
+
+        //Hits and Spins Function
         let hits=0;
         let spins=0;
         hits_span.innerHTML = hits; 
         spins_span.innerHTML = spins;
-    </script>
-    <footer>
-        <h1>
-            <script>
-                document.write("Your One Stop For Used Phones - "+store_name+"'s");
-            </script>
-        </h1>
-    </footer>
-</body>
 
+        //String Template Footer
+        let header = "Templates Literals";
+        let tags = ["template literals", "javascript", "es6"];
+
+        let html = `<ul>`;
+
+        for (const x of tags) {
+        html += `<li>${x}</li>`;
+        }
+
+        html += `</ul>`;
+        document.getElementById("demo").innerHTML = html;
+
+    </script>
+</body>
 </html>
