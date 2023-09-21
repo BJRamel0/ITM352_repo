@@ -21,6 +21,9 @@
         const last_name="Ramel";
         let initials=first_name.charAt(0)+"."+last_name.charAt(0)+".";
         const now=new Date();
+        const year=now.getFullYear();
+        const hours=now.getHours();
+        const mins=now.getMinutes();
     </script>
 
 </head>
@@ -93,11 +96,11 @@
                     </tr>
                     <tr>
                         <td>2.</td>
-                        <td><script>document.write(now)</script></td>
+                        <td><script>document.write(year)</script></td>
                     </tr>
                     <tr>
                         <td>3.</td>
-                        <td>11:15 AM</td>
+                        <td><script>document.write(hours+":"+mins)</script></td>
                     </tr>
                 </tbody>
             </table>
