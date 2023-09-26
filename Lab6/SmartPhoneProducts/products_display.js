@@ -36,7 +36,7 @@ function changeClassName(element) {
     // -- Winning progress depends on hits/spins
     let progress;
     let hits_spins_ratio = hits/spins;
-    if ( hits_spins_ratio > 0 ) {
+    /*if ( hits_spins_ratio > 0 ) {
         progress = 'On your way!';
         if ( hits_spins_ratio >= 0.25 ) {
             progress = 'Almost there!';
@@ -46,10 +46,31 @@ function changeClassName(element) {
                 }
             }
         }
-    }
-    else {
+    } else {
         progress = 'Get going!' ;
-    }
+    }*/
+    
+    //Revamped hits/spins if-else statement
+    /*if ( hits_spins_ratio >= 0.5 && hits<spins) {
+        progress='You win!';
+    } else if( hits_spins_ratio >= 0.25 ) {
+        progress = 'Almost there!';
+    } else if( hits_spins_ratio > 0) {
+        progress='On your way!';
+    } else {
+        progress = 'Get going!' ;
+    }*/
+
+    //ChatGPT's if-elseif-else output
+    if (hits_spins_ratio >= 0.5 && hits < spins) {
+        progress = 'You win!';
+    } else if (hits_spins_ratio >= 0.25) {
+        progress = 'Almost there!';
+    } else if (hits_spins_ratio > 0) {
+        progress = 'On your way!';
+    } else {
+        progress = 'Get going!';
+    }    win_span.innerHTML=progress;
 }
 //Hits Function
 function resetClassName(element){
@@ -86,21 +107,30 @@ function resetClassName(element){
                 }
             }
         }
-    }
-    else {
+    } else {
         progress = 'Get going!' ;
     }*/
 
-    if ( hits_spins_ratio >= 0.5 ) {
-        if(hits<spins) {
-            progress='You win!';
-        } //
+    //Revamped hits/spins if-else statement
+    /*if ( hits_spins_ratio >= 0.5 && hits<spins) {
+        progress='You win!';
     } else if( hits_spins_ratio >= 0.25 ) {
         progress = 'Almost there!';
     } else if( hits_spins_ratio > 0) {
-        progress='Pn your way!';
+        progress='On your way!';
     } else {
         progress = 'Get going!' ;
+    }*/
+
+    //ChatGPT's if-elseif-else output
+    if (hits_spins_ratio >= 0.5 && hits < spins) {
+        progress = 'You win!';
+    } else if (hits_spins_ratio >= 0.25) {
+        progress = 'Almost there!';
+    } else if (hits_spins_ratio > 0) {
+        progress = 'On your way!';
+    } else {
+        progress = 'Get going!';
     }
     win_span.innerHTML=progress;
 }
