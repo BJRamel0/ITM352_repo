@@ -34,12 +34,27 @@ let subtotal = extendedPrice1 + extendedPrice2 + extendedPrice3 + extendedPrice4
 //Sales Tax, Tax Rate = 5.75%
 let salesTax = subtotal * 0.0575;
 
-let total = salesTax + subtotal;
+//Shipping
+let shipping;
+if (subtotal >= 100) {
+    shipping = 0.05 * subtotal;
+} else if (subtotal >= 50) {
+    shipping = 5;
+} else if (subtotal > 0) { 
+    /*The assignment said $0 subtotal pays $2 shipping
+    */
+    shipping = 2;
+} else {
+    shipping = 0;
+}
+
+//Total Shopping Cart Price
+let total = salesTax + subtotal + shipping;
 
 //DOM
 let table = document.getElementById('invoiceTable');
 
-// item row 1
+//Table Rows
 let row = table.insertRow();
 row.insertCell(0).innerHTML = item1; 
 row.insertCell(1).innerHTML = quantity1;
@@ -73,5 +88,6 @@ row.insertCell(3).innerHTML = '$'+ extendedPrice5;
 //Set 
 document.getElementById('subtotal_cell').innerHTML= '$'+subtotal.toFixed(2);
 document.getElementById('tax_cell').innerHTML= '$'+salesTax.toFixed(2);
+document.getElementById('shipping').innerHTML= '$'+shipping.toFixed(2);
 document.getElementById('total_cell').innerHTML= '$'+total.toFixed(2);
 
