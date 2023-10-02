@@ -114,14 +114,14 @@ for (let i=1; eval("typeof name"+i)!='undefined'; i++) {
     }
 }
 
-//excercise 4.2 || table header ||
+//excercise 4.2
+//Create table header
 document.write('<table border="1"');
 document.write('<tr><th>Number</th><th>Item</th></tr>');
 
-//Loop to output oaws
-for (let i=1; i <- num_products; i++) {
-    document.write('<tr><th>${i}</th><th></th>${eval('name' +i)</tr>')
+//Loop to output
+for (let i=1; eval("typeof name"+i)!='undefined'; i++) {
+    document.write(`<tr><td>${i}</td><td>${eval("name"+i)}</td></tr>`);
 }
-
-//Close the table
-document.write('</tables>');
+    //Close the table
+document.write('</table>');
