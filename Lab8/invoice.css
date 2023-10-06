@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+    width: 100;
+}
+
+table, td {
+    border: 1px solid black;
+    background-color: ivory;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+
+}
+
+th {
+    font-size: 22px;
+    border: 2px solid black;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+#after {
+    text-align: right;
+}
+
