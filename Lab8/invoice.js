@@ -1,41 +1,58 @@
+//lab8 2.1
+let product_quantities=[2,1,1,3,12];
+
+//lab8 2.3 Add and delete a new element from array
+product_quantities.push(3);
+//alert("The size of the products array is: "+product_quantities.length);
+product_quantities.pop();
+
+//lab8 2.2 used alert function to display array size
+//alert("The size of the products array is: "+product_quantities.length);
+
 // Product 1
 let item1 = 'Gillette Sensor 3 Razor';
-let quantity1 = 2;
+let quantity1 = product_quantities[0];
 let price1 = 1.23;
 //let extendedPrice1 = quantity1 * price1;
 
 // Product 2
 let item2 = 'Barbasol Shaving Cream';
-let quantity2 = 1;
+let quantity2 = product_quantities[1];
 let price2 = 2.64;
 let extendedPrice2 = quantity2 * price2;
 
 // Product 3
 let item3 = 'Nautica Cologne';
-let quantity3 = 1;
+let quantity3 = product_quantities[2];
 let price3 = 6.17;
 let extendedPrice3 = quantity3 * price3;
 
 // Product 4
 let item4 = 'Rubbing Alcohol';
-let quantity4 = 3;
+let quantity4 = product_quantities[3];
 let price4 = 0.98;
 let extendedPrice4 = quantity4 * price4;
 
 // Product 5
 let item5 = 'Colgate Classic Toothbrush';
-let quantity5 = 12;
+let quantity5 = product_quantities[4];
 let price5 = 1.89;
 let extendedPrice5 = quantity5 * price5;
 
 //lab8 1.1
+//lab8 2.1 changed quantities using array
 let product1 = {
     itemName: 'Gillette Sensor 3 Razor',
-    quantity: 2,
+    quantity: product_quantities[0],
     price: 1.23
 };
+
+//lab8 1.4 Added and deleted new property
+product1["SKU#"]=1234;
+delete product1["SKU#"];
+
 //lab8 1.3: setting object to 0
-product1.quantity = 0;
+//product1.quantity = 0;
 
 //lab8 1.2: ExtendedPrice from item1 to product 1
 let extendedPrice1 = product1.quantity * product1.price;
