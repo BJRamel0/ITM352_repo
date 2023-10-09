@@ -42,3 +42,19 @@ body > div {
     transform: rotate(359deg);
   }
 }
+
+.table-header {
+  font-size: large;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 8px;
+  font-size: medium;
+  text-align: center;
+}
