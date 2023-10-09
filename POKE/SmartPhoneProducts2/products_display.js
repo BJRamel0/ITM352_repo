@@ -4,7 +4,6 @@ const last_name="Ramel";
 const store_name="BJ";
 let hits=0;
 let spins=0;
-//let wins;
 let over_half=false;
 hits_span.innerHTML = hits; 
 spins_span.innerHTML = spins;
@@ -12,7 +11,7 @@ spins_span.innerHTML = spins;
 //declare and push to the DOM the store name at top and bottom
 top_title.innerHTML=(store_name + "'s Used Smart Phone Store");
 
-//POKE8 Defining variables (name, price, image)
+//POKE8 Variables (name, price, image)
 let name1 = "HTC";
 let price1 = 40.00;
 let image1 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg";
@@ -33,20 +32,21 @@ let name5 = "Blackberry";
 let price5 = 10.00;
 let image5 = "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg";
 
-//Looping HTML
-for (let i=1; eval("typeof name"+i)!='undefined'; i++) {
+//Loop <main> HTML
+for (let i=1; eval("typeof name"+i)!= 'undefined'; i++) {
     document.querySelector('.main').innerHTML += `
-    <section class="item" onmouseover="changeClassName(this);" onclick="resetClassName(this);">
-        <h2>${eval("name"+i)}</h2>
-        <p>$${eval("price"+i)}</p>
-        <img src="${eval("image"+i)}">
-    </section>`;
+    <section class="item" onmouseover="changeClassName(this);" onclick="resetClassName(this); ">
+                <h2>${eval("name"+i)}</h2>
+                <p>$${eval("price"+i)}</p>
+                <img src="${eval("image"+i)}"/>
+            </section>
+    `;
 }
 
 const currentYear=new Date().getFullYear();
 const currentTime=new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
 
-
+//Footer table maker
 const footerTable = `
     <table>
         <tr>
@@ -69,7 +69,6 @@ const footerTable = `
 `;
 bottom_title.innerHTML=footerTable;
 
-
 //Declaring Functions---
 //Spins Function
 function changeClassName(element) {
@@ -78,11 +77,16 @@ function changeClassName(element) {
         element.className='item rotate';
         spins=spins+1;
     }
+    //spins=spins+1; 
 
     //False, or else, True Win
     if(spins<2*hits&&hits<spins){
+        //wins=true;
         over_half=true;
+    } else {
+        //wins=false;
     }
+    //win_span.innerHTML=wins;
     win_span.innerHTML=over_half;
     spins_span.innerHTML = spins; 
     hit_spin_span.innerHTML=Number(hits/spins).toFixed(2)
@@ -112,7 +116,7 @@ function resetClassName(element){
     }
     if(spins<2*hits&&hits<spins){
         overhalf=true;
-    } 
+    }
     win_span.innerHTML=over_half;
     hits_span.innerHTML = hits; 
     hit_spin_span.innerHTML=Number(hits/spins).toFixed(2)
