@@ -1,4 +1,4 @@
-3. Create array
+2 & 3. Create array
     products = [
         {'brand': 'HTC', 'price': 40.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg" },
         ...
