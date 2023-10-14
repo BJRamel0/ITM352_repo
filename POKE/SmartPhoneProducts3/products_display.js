@@ -11,18 +11,26 @@ spins_span.innerHTML = spins;
 //declare and push to the DOM the store name at top and bottom
 top_title.innerHTML=(store_name + "'s Used Smart Phone Store");
 
-//POKE9 Array (brand, price, image)
-products = [
-    {'brand': 'HTC', 'price': 40.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg" },
+//POKE8 Variables (name, price, image)
+let product1 = {
+        'brand': 'HTC', 'price': 40.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg"
+    };
 
-    {'brand': 'Apple', 'price': 75.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg" },
+let product2 = {
+        'brand': 'Apple', 'price': 75.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg"
+    };
 
-    {'brand': 'Nokia', 'price': 35.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg" },
+let product3 = {
+        'brand': 'Nokia', 'price': 35.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg"
+    };
 
-    {'brand': 'Samsung', 'price': 45.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg" },
+let product4 = {
+        'brand': 'Samsung', 'price': 45.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg"
+    };
 
-    {'brand': 'Blackberry', 'price': 10.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg" }
-];
+let product5 = {
+        'brand': 'Blackberry', 'price': 10.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg"
+    };
 
 /*Loop <main> HTML
 for (let i=1; eval("typeof name"+i)!= 'undefined'; i++) {
@@ -35,19 +43,19 @@ for (let i=1; eval("typeof name"+i)!= 'undefined'; i++) {
     `;
 }*/
 
-//Loop <main> HTML -- NO evals()
+let products = [product1, product2, product3, product4, product5];
+
 for (i = 0; i < products.length; i++) {
     const product = products[i];
 
     document.querySelector('.main').innerHTML += `
-    <section class="item" onmouseover="changeClassName(this);" onclick="resetClassName(this); ">
-                <h2>${product.brand}</h2>
-                <p>$${product.price}</p>
-                <img src="${product.image}"/>
-            </section>
+        <section class="item" onmouseover="changeClassName(this);" onclick="resetClassName(this);">
+            <h2>${product.brand}</h2>
+            <p>$${product.price}</p>
+            <img src="${product.image}"/>
+        </section>
     `;
 };
-
 
 const currentYear=new Date().getFullYear();
 const currentTime=new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
