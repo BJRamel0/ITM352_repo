@@ -11,37 +11,22 @@ spins_span.innerHTML = spins;
 //declare and push to the DOM the store name at top and bottom
 top_title.innerHTML=(store_name + "'s Used Smart Phone Store");
 
-//POKE8 Variables (name, price, image)
+//POKE9 Array (brand, price, image)
 let product1 = {
-        'brand': 'HTC', 'price': 40.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg"
-    };
-
+    'brand': 'HTC', 'price': 40.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg" ,
+};
 let product2 = {
-        'brand': 'Apple', 'price': 75.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg"
-    };
-
+    'brand': 'Apple', 'price': 75.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg" ,
+};
 let product3 = {
-        'brand': 'Nokia', 'price': 35.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg"
-    };
-
+    'brand': 'Nokia', 'price': 35.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg" ,
+};
 let product4 = {
-        'brand': 'Samsung', 'price': 45.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg"
-    };
-
+    'brand': 'Samsung', 'price': 45.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg" ,
+};
 let product5 = {
-        'brand': 'Blackberry', 'price': 10.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg"
-    };
-
-/*Loop <main> HTML
-for (let i=1; eval("typeof name"+i)!= 'undefined'; i++) {
-    document.querySelector('.main').innerHTML += `
-    <section class="item" onmouseover="changeClassName(this);" onclick="resetClassName(this); ">
-                <h2>${eval("name"+i)}</h2>
-                <p>$${eval("price"+i)}</p>
-                <img src="${eval("image"+i)}"/>
-            </section>
-    `;
-}*/
+    'brand': 'Blackberry', 'price': 10.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg" 
+};
 
 let products = [product1, product2, product3, product4, product5];
 
