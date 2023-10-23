@@ -13,7 +13,9 @@ top_title.innerHTML=(store_name + "'s Used Smart Phone Store");
 
 //POKE9 Array (brand, price, image)
 let product1 = {
-    'brand': 'HTC', 'price': 40.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg" ,
+    'brand': 'HTC',
+    'price': 40.00, 
+    'image': "images/HTC.jpg",
 };
 let product2 = {
     'brand': 'Apple', 'price': 75.00, 'image': "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg" ,
