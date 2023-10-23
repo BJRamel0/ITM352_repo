@@ -1,12 +1,12 @@
 //Define the quantities array
-let quantity = [2, 1, 1, 3, 12];
+let quantity = [3, 1, 1, 3, 12];
 
 //Define item objects with brand and quantity attributes
 let itemData = [
     {   
         brand: "HTC",
         price: 40.00,
-        quantityIndex: 2,
+        quantityIndex: 3,
     },
     {   
         brand: "Apple",
@@ -23,11 +23,14 @@ let itemData = [
         price: 45.00,
         quantityIndex: 3,
     },
-    {   
-        brand: "Blackberry",
+    {
+        brand: 'Blackberry',
         price: 10.00,
-        quantityIndex: 12,
-    },
+        quantityIndex: 12, 
+      },  
 ];
 
 export { itemData, quantity };
+
+
+
