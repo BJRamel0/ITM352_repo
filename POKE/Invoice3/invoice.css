@@ -24,3 +24,10 @@ th {
     text-align: right;
 }
 
+.red-text {
+    color:red;
+}
+
+.quantity {
+    text-align: center;
+}

@@ -34,16 +34,13 @@ document.getElementById('shipping').innerHTML= '$'+shipping.toFixed(2);
 function validateQuantity(quantity) {
     switch (true) {
         case isNaN(quantity):
-            return "Not a number.";
-            break;
-        case quantity < 0 && !Number.isInteger(quantity):
-            return "Negative inventory and not an Integer. Please enter a non-negative quantity to order.";
+            return "\nNot a number!";
             break;
         case quantity < 0:
-            return "Negative inventory. please enter a non-negative quantity to order.";
+            return "\nNegative value!";
             break;
         case !Number.isInteger(quantity):
-            return "Not an Integer. please enter a non0egative quantity to order.";
+            return "\nNot an integer";
             break;
         default:
             return ""; //no errors
@@ -74,7 +71,9 @@ function generateItemRows() {
         hasErrors = true;
         let row = table.insertRow();
         row.insertCell(0).innerHTML = item.brand;
-        row.insertCell(1).innerHTML = validationMessage;
+        row.insertCell(1).innerHTML =  '<div class="quantity">' + quantity[i] + '<br><span class="red-text">' + validationMessage;
+        row.insertCell(2).innerHTML = '$' + item.price.toFixed(2);
+        row.insertCell(3).innerHTML = '$' + 0;
       } else if (itemQuantity > 0) {
         // Calculate the extended price if quantity is valid and positive
         let extendedPrice = item.price * itemQuantity;
@@ -83,7 +82,7 @@ function generateItemRows() {
         // Display the item with the calculated extended price
         let row = table.insertRow();
         row.insertCell(0).innerHTML = item.brand;
-        row.insertCell(1).innerHTML = itemQuantity;
+        row.insertCell(1).innerHTML = '<div class="quantity">' + itemQuantity;
         row.insertCell(2).innerHTML = '$' + item.price.toFixed(2);
         row.insertCell(3).innerHTML = '$' + extendedPrice.toFixed(2);
       }
@@ -94,4 +93,3 @@ function generateItemRows() {
       document.getElementById('total_cell').innerHTML = '$' + total.toFixed(2);
     }
   }
-
