@@ -12,8 +12,6 @@ function updateQuantityMessage(textbox) {
     }
 } 
 
-
-
 function validateQuantity(quantity) {
     let errorMessage= "";
 
