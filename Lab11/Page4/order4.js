@@ -19,7 +19,7 @@ function validateQuantity(quantity) {
         case isNaN(quantity):
             errorMessage = "Not a number. Please enter a non-negative quantity to order.";
             break;
-        case quantity = 0:
+        case quantity == 0:
             errorMessage = "Zero is not enough. Please enter a larger quantity";
             break;
         case quantity < 0 && !Number.isInteger(quantity):
