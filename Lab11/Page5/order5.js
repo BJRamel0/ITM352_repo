@@ -1,16 +1,18 @@
-function updateQuantityMessage(textbox) {
-    let quantityMessage=document.getElementById('qty_textbox_message');
+function formSubmission() {
+    //get the value from the form textbox, convert itto a number and assign it to something easy to type 
+    let quantity=Number(document.querySelector('input[name="qty_textbox"]').value);
 
-    //validate the quantity entered
-    let validationMessage=validateQuantity(Number(textbox.value));
+    let validationMessage=validateQuantity(quantity);
 
-    //if there are validation errors, display error message
     if (validationMessage !=="") {
-        quantityMessage.innerHTML = validationMessage;
+        document.getElementById("invalidQuantity").innerHTML=validationMessage;
+        window.stop();
     } else {
-        quantityMessage.innerHTML = textbox.value;
+        //redirect to the display_purchase.html page
+        window.location.href=`display_purchase.html?qty_textbox=${quantity}`;
     }
-} 
+    return false; //prevent form submission
+}
 
 function validateQuantity(quantity) {
     let errorMessage= "";
@@ -37,18 +39,4 @@ function validateQuantity(quantity) {
     }
 
     return errorMessage;
-}
-
-function displayPurchase() {
-    let quantity = Number(document.getElementById('qty_textbox').value);
-
-    let validationMessage = validateQuantity(quantity);
-
-    if (validationMessage == "") {
-        let message = `Thank you for ordering ${quantity} things!`;
-        document.body.innerHTML = message;
-    } else {
-        alert(validationMessage + " Please enter a positive integer for quantity.")
-        document.getElementById('qty_textbox').value="";
-    }
 }
