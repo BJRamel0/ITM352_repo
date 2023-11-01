@@ -1,0 +1,32 @@
+[
+	{
+		"model": "Cinnamon Toast Crunch",
+		"price": 4.93,
+		"image": "Apple15.jpg",
+		"qty_available": 3
+	},
+	{
+		"model": "Frosted Flakes",
+		"price": 5.29,
+		"image": "SamsungZFlip",
+		"qty_available": 1
+	},
+    {
+		"model": "Froot Loops",
+		"price": 5.99,
+		"image": "Apple15.jpg",
+		"qty_available": 5
+	},
+	{
+		"model": "Honey Nut Cheerios",
+		"price": 4.04,
+		"image": "SamsungZFlip",
+		"qty_available": 12
+	},
+    {
+		"model": "Raisin Bran",
+		"price": 4.29,
+		"image": "SamsungZFlip",
+		"qty_available": 20
+	}
+]
