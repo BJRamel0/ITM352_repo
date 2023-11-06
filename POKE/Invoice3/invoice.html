@@ -1,8 +1,8 @@
-<!--invoice.html-->
+<!-- invoice.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="invoice.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="invoice.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Receipt</title>
@@ -22,24 +22,24 @@
         </tbody>
         <tfoot>
             <tr>
-                <td id = "after" colspan="3">Sub-total</td>
+                <td colspan="3">Sub-total</td>
                 <td id="subtotal_cell">$0.00</td>
             </tr>
             <tr>
-                <td id = "after" colspan="3">Tax @ 5.75%</td>
+                <td colspan="3">Tax @ 5.75%</td>
                 <td id="tax_cell">$0.00</td>
             </tr>
             <tr>
-                <td id = "after" colspan="3">Shipping</td>
-                <td id="shipping">$0.00</td>
-            </tr>
+                <td colspan="3">Shipping</td>
+                <td id="shipping_cell">$0.00</td>
+            </tr>    
             <tr>
-                <td id = "after" colspan="3" style="font-weight: bold;">Total</td>
-                <td id="total_cell" style="font-weight: bold;">$0.00</td>
+                <td colspan="3"><strong>Total</strong></td>
+                <td id="total_cell"><strong>$0.00</strong></td>
             </tr>
         </tfoot>
     </table>
-    <script src="./invoice.js" type="module"></script>
-    <!--note that you have to set script type to "module" to use import-->
+    <script src="invoice.js" type="module"></script>
+    <!-- note that you have to set script type to "module" to use import -->
 </body>
 </html>
