@@ -1,5 +1,6 @@
 //import data from products.js into this js file
-import { itemData, quantity } from '../products.js';
+let params= (new URL(document.location)).searchParams;
+let quantity = params.get("qty_textbox");
 let subtotal=0;
 let taxRate=0.0575; //5.75%
 let taxAmount=0;

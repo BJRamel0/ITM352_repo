@@ -45,8 +45,8 @@ for (i = 0; i < products.length; i++) {
     `;
 };
 
-let quantity = get("qty_textbox");
-console.log(quantity);
+//let quantity = get("qty_textbox");
+//console.log(quantity);
 
 const currentYear=new Date().getFullYear();
 const currentTime=new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
@@ -59,7 +59,7 @@ const footerTable = `
             <td class="table-header">Your One Stop for Used Phones - ${first_name.charAt(0).toUpperCase()}.${last_name.charAt(0).toUpperCase()}'s</td>
         </tr>
         <tr>
-            <input type="submit" value="Purchase" onsubmit="..invoice.html">
+            <input type="submit" value="Purchase" onsubmit="return formSubmission()">
         </tr>
         <tr>
             <td>1.</td>
