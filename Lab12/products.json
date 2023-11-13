@@ -1,27 +1,32 @@
 [
 	{
-		"model": "Cinnamon Toast Crunch",
+		"brand": "Cinnamon Toast Crunch",
 		"price": 4.93,
+		"total_sold": 10,
 		"quantityIndex": 0
 	},
 	{
-		"model": "Frosted Flakes",
+		"brand": "Frosted Flakes",
 		"price": 5.29,
+		"total_sold": 12,
 		"quantityIndex": 1
 	},
     {
-		"model": "Froot Loops",
+		"brand": "Froot Loops",
 		"price": 5.99,
+		"total_sold": 2,
 		"quantityIndex": 2
 	},
 	{
-		"model": "Honey Nut Cheerios",
+		"brand": "Honey Nut Cheerios",
 		"price": 4.04,
+		"total_sold": 9,
 		"quantityIndex": 3
 	},
     {
-		"model": "Raisin Bran",
+		"brand": "Raisin Bran",
 		"price": 4.29,
+		"total_sold": 104,
 		"quantityIndex": 4
 	}
 ]
