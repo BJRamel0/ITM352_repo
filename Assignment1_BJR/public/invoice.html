@@ -1,0 +1,46 @@
+<!----------------------invoice.html--------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="/products.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Extended Price</th>
+            </tr>
+        </thead>
+        <tbody id="invoiceTable">
+            <!-- Product rows will be added dynamically using JavaScript -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td id = "after" colspan="3">Sub-total</td>
+                <td id="subtotal_cell">$0.00</td>
+            </tr>
+            <tr>
+                <td id = "after" colspan="3">Tax @ 5.75%</td>
+                <td id="tax_cell">$0.00</td>
+            </tr>
+            <tr>
+                <td id = "after" colspan="3">Shipping</td>
+                <td id="shipping">$0.00</td>
+            </tr>
+            <tr>
+                <td id = "after" colspan="3" style="font-weight: bold;">Total</td>
+                <td id="total_cell" style="font-weight: bold;">$0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="invoice.js" type="module"></script>
+    <!--note that you have to set script type to "module" to use import-->
+</body>
+</html>

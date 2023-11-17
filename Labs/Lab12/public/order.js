@@ -8,10 +8,10 @@ if (error) {
 
 let productDetailsDiv = document.getElementById('')
 
-productDetailsDiv.InnerHTML = `document.write(`<h3>${products[0]["brand"]} at \$${products[0]["price"]}</h3>`);`
+productDetailsDiv.InnerHTML = document.write(`<h3>${products[0]["brand"]} at \$${products[0]["price"]}</h3>`);
 
 let productListDiv=document.getElementById('productList');
 
 for (i in products) {
-    productListDiv.innerHTML +=`<h4>${products[i]["total_sold"]} ${products[i]["brand"]} have been sold!</h4>`);
+    productListDiv.innerHTML +=`<h4>${products[i]["total_sold"]} ${products[i]["brand"]} have been sold!</h4>`;
 }

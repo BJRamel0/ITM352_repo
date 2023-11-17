@@ -7,6 +7,8 @@ let taxAmount=0;
 let total=0;
 let shipping;
 
+
+
 generateItemRows();
 
 //Shipping based on sub-total
