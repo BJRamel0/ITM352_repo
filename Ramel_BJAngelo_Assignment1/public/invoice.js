@@ -5,7 +5,7 @@ let quantity = [];
 
 // Populate quantity array based on the URL parameters
 for (let i = 0; i < products.length; i++) {
-    let quantityParam = params.get(`quantity`);
+    let quantityParam = params.get('quantity');
 
     if (quantityParam) {
         // Parse the JSON string into an array
@@ -61,7 +61,6 @@ document.getElementById('shipping').innerHTML = '$' + shipping.toFixed(2);
 
 // Function to generate item rows in the receipt
 function generateItemRows() {
-    
     // Add background image to the body
     document.body.style.backgroundImage = 'url("./images/Table.jpeg")';
 
@@ -84,7 +83,7 @@ function generateItemRows() {
             // Handle validation errors (e.g., display an alert, update UI, etc.)
             // You can customize this based on your application's needs
         } else if (itemQuantity > 0) {
-        // Calculate the extended price if quantity is valid and positive
+            // Calculate the extended price if quantity is valid and positive
             let extendedPrice = item.price * itemQuantity;
             subtotal += extendedPrice;
 
@@ -116,10 +115,10 @@ function validateQuantity(quantity) {
             errorMessage = "Negative inventory and not an Integer. Please enter a non-negative quantity to order.";
             break;
         case quantity < 0:
-            errorMessage = "Negative inventory. please enter a non-negative quantity to order.";
+            errorMessage = "Negative inventory. Please enter a non-negative quantity to order.";
             break;
         case !Number.isInteger(quantity):
-            errorMessage = "Not an Integer. please enter a non-negative quantity to order.";
+            errorMessage = "Not an Integer. Please enter a non-negative quantity to order.";
             break;
         default:
             errorMessage = ""; // No errors
@@ -127,6 +126,4 @@ function validateQuantity(quantity) {
     }
 
     return errorMessage;
-
-
 }
