@@ -39,10 +39,10 @@ let shipping;
 generateItemRows();
 
 // Calculate shipping based on sub-total
-if (subtotal <= 50) {
-    shipping = 2;
-} else if (subtotal <= 100) {
-    shipping = 5;
+if (subtotal <= 2000) {
+    shipping = 500;
+} else if (subtotal <= 200000) {
+    shipping = 5000;
 } else {
     shipping = subtotal * 0.05; // 5% of subtotal
 }
@@ -61,6 +61,10 @@ document.getElementById('shipping').innerHTML = '$' + shipping.toFixed(2);
 
 // Function to generate item rows in the receipt
 function generateItemRows() {
+    
+    // Add background image to the body
+    document.body.style.backgroundImage = 'url("./images/Table.jpeg")';
+
     // Get the table element to populate
     let table = document.getElementById('invoiceTable');
 
@@ -80,13 +84,13 @@ function generateItemRows() {
             // Handle validation errors (e.g., display an alert, update UI, etc.)
             // You can customize this based on your application's needs
         } else if (itemQuantity > 0) {
-            // Calculate the extended price if quantity is valid and positive
+        // Calculate the extended price if quantity is valid and positive
             let extendedPrice = item.price * itemQuantity;
             subtotal += extendedPrice;
 
             // Display the item with the calculated extended price
             let row = table.insertRow();
-            row.insertCell(0).innerHTML = item.brand;
+            row.insertCell(0).innerHTML = `<strong>${item.brand}</strong><br><img src="${products[i].image}" alt="${products[i].imageName}" style="border-radius: 5px; width: 100px; height: 100px;">`;
             row.insertCell(1).innerHTML = itemQuantity;
             row.insertCell(2).innerHTML = "$" + item.price.toFixed(2);
             row.insertCell(3).innerHTML = "$" + extendedPrice.toFixed(2);
@@ -124,5 +128,5 @@ function validateQuantity(quantity) {
 
     return errorMessage;
 
-    
+
 }
