@@ -48,8 +48,8 @@ table {
 }
 
 .bottom-box p:last-child {
-    font-size: 14px; /* Adjust the font size as needed */
-    margin-bottom: 1; /* Remove any default margin */
+    font-size: 1.5vw; /* Adjust font size using viewport width */
+    margin-bottom: 1vw; /* Adjust margin using viewport width */
 }
 
 .invisible-box {
@@ -215,17 +215,31 @@ img {
     .product-container {
         width: calc(50% - 20px);
     }
+
+    .invoice-container {
+        width: calc(50% - 20px);
+    }
 }
 
 @media screen and (max-width: 600px) {
+    .invisible-box {
+        width: 80%; /* Adjust the width for smaller screens */
+        height: 40%; /* Adjust the height for smaller screens */
+        max-height: 300px; /* Set a maximum height if necessary for smaller screens */
+    }
+
+    .bottom-box {
+        width: 80%; /* Adjust the width for smaller screens */
+        padding: 4vw; /* Adjust padding for smaller screens */
+        font-size: 4vw; /* Adjust font size for smaller screens */
+    }
+
     .product-container {
         width: 100%;
     }
 
-    .bottom-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 60px; /* Adjust the height as needed */
+    .invoice-container {
+        width: 100%;
     }
 }
+

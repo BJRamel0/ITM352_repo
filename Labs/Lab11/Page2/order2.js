@@ -1,4 +1,8 @@
+//Order2.js
 function updateQuantityMessage(textbox) {
+    let inputValue = Number(textbox.value);
+    let errorMessages = validateQuantity(inputValue);
+
     let quantityMessage=document.getElementById('qty_textbox_message');
 
     //validate the quantity entered
@@ -12,13 +16,15 @@ function updateQuantityMessage(textbox) {
     }
 } 
 
-
-
 function validateQuantity(quantity) {
-    let errorMessage= "";
+    let errorMessage= [];
+
+    let quantityValue = Number(quantity);
+
+    errorMessage.length = 0;
 
     switch (true) {
-        case isNaN(quantity):
+        case isNaN(quantityValue):
             errorMessage = "Not a number. Please enter a non-negative quantity to order.";
             break;
         case quantity == 0:
@@ -38,7 +44,12 @@ function validateQuantity(quantity) {
             break;
     }
 
-    return errorMessage;
+        // Return the errors array if there are any validation errors
+        if (errorMessage.length > 0) {
+            return errorMessage;
+        } else {
+            return null; // Return null if no validation errors
+        }
 }
 
 function displayPurchase() {
