@@ -141,6 +141,22 @@ function validateQuantity(quantity, availableQuantity) {
     }
 }
 
+app.post('/process_login', (req, res) => {
+    
+});
+
+app.post('/purchase_logout', (req, res) => {
+
+});
+
+app.post('/continue_shopping', (req, res) => {
+
+});
+
+app.post('/process_register', (req, res) => {
+
+});
+
 
 // Start the server; listen on port 8080 for incoming HTTP requests
 app.listen(8080, () => console.log(`Server is listening on port 8080`));
