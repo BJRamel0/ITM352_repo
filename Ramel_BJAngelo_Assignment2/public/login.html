@@ -17,6 +17,7 @@
 
     <!-- External JavaScript file for product data -->
     <script type="text/javascript" src="/products.js"></script>
+    <script type="text/javascript" src="login.js"></script>
 </head>
 
 <body>
@@ -43,17 +44,24 @@
             <p>Please sign in to continue</p>
             <div id="errMsg"></div>
             <form action="/login" method="POST">
-            <input type="text" name="username" id="username" size="40" placeholder="enter username" ><br />
-            <input type="password" name="password" size="40" placeholder="enter password"><br />
-            <input type="submit" value="Submit" id="submit">
+                <input type="text" name="email" id="email" size="40" placeholder="Enter Email" onblur="validateEmail()"><br/>
+                <div id="emailError" class="error-msg"></div>
+                <input type="password" id="password" name="password" size="40" placeholder="enter password">
+                <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"><br/>
+                <input type="submit" value="Submit" id="submit"><br/>
+                <div class="register-login-container">
+                    <h2 class="not-a-member">Not a member?</h2>
+                    <a href="register.html" class="btn btn-link" id="register">Register</a>
+                </div>
             </form>
             <script>
+                
                 // Retrieve values from the query parameters or set default values if not present
-                let user_return = request.query.username || "";
+                let user_return = request.query.email || "";
                 let errorMessage = request.query.error || "";
 
-                // Set the value of the username field to the value from the query parameters
-                document.getElementById("username").value = "${user_return}";
+                // Set the value of the email field to the value from the query parameters
+                document.getElementById("email").value = "${user_return}";
     
                 // Display error message if present
                 let errMsg = "${errorMessage}";
@@ -61,7 +69,7 @@
                     document.getElementById("errMsg").innerHTML = errMsg;
                 }
             </script>
-        <!-- External JavaScript file for invoice functionality -->
+        <!-- External JavaScript file for login functionality -->
         <script src="login.js" type="module"></script>
         <!-- Note: set script type to "module" to use import -->
     </div>

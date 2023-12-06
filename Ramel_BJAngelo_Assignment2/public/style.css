@@ -1,4 +1,4 @@
-/*----------------------invoice.html---------------------------*/
+/*----------------------style.css---------------------------*/
 body {
     max-width: 1400px;
     margin: 0;
@@ -10,11 +10,33 @@ body {
     height: 100; /* Only on invoice and product*/
 }
 
+.error-msg {
+    color: red; /* Set the color of the error message */
+    font-size: 14px; /* Set the font size of the error message */
+    margin-top: 5px; /* Add some spacing above the error message */
+    margin-left: 5%;
+}
+
+.register-login-container {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    height: 100%; /* Ensure the container takes full height */
+    padding-top: 10%;
+}
+
+.not-a-member {
+    margin-right: 10px; /* Adjust margin for spacing between text and button */
+    font-size: 16px; /* Adjust font size to match the button */
+    margin: 0; /* Remove default margin */
+    align-self: center; /* Align text both vertically and horizontally within its box */
+}
+
 .login-container {
-    background-color: #208E0E;;
+    background-color: #F1DEDE;
     width: 30%;
     padding: 20px; /* Increased padding for the container */
-    margin: 20vh auto;
+    margin: 12vh auto;
     text-align: left; /* Adjusted text alignment */
     box-sizing: border-box;
     display: flex;
@@ -22,28 +44,48 @@ body {
     justify-content: center;
     align-items: left;
     min-height: 50vh;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .login-container h1 {
     text-align: left;
-    color: white; /* Adjust the color as needed */
+    color: black; /* Adjust the color as needed */
+    margin-left: 5%;
+    padding-top: 10%;
 }
 
 .login-container p {
     text-align: left;
-    color: white; /* Adjust the color as needed */
+    color: black; /* Adjust the color as needed */
     margin-bottom: 20px; /* Adjust the margin as needed */
+    margin-left: 5%;
 }
 
+.login-container input[type="email"],
+.login-container input[type="password"],
 .login-container input[type="text"],
-.login-container input[type="password"] {
+.login-container input[type="name"] {
     width: 80%; /* Adjusted width as needed */
     padding: 10px; /* Adjusted padding for more spacing */
     margin: 5px 0; /* Adjusted margin for spacing between textboxes */
     box-sizing: border-box;
     border: none; /* Removed borders */
     border-radius: 3px; /* Added a small border-radius for a softer appearance */
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+    margin-left: 5%;
+}
+
+.login-container input[type="submit"] {
+    width: 80%; /* Adjusted width as needed */
+    padding: 10px; /* Adjusted padding for more spacing */
+    margin: 15px 0; /* Adjusted margin for spacing between textboxes and button */
+    box-sizing: border-box;
+    border: none; /* Removed borders */
+    border-radius: 5px; /* Added border-radius for curved edges */
+    background-color: #4DA167; /* Red color for the button */
+    color: white; /* Text color */
+    cursor: pointer;
+    margin-top: 4%;
+    margin-left: 5%;
 }
 
 .invoice-container {
@@ -155,12 +197,6 @@ form {
     color: black;
 }
 
-        /* Additional styles for content if needed */
-        h1 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional text shadow for better readability */
-        }
-
 .product-container {
     background-color: black;
     border: 1px solid black; /* Keep this line for the black border */
@@ -196,11 +232,6 @@ form {
     margin-top: 5px; /* Adjusted margin-top for more spacing */
 }
 
-/* Additional styles for content if needed */
-h1 {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 .textbox {
     /* Add your specific styles for the textbox here */
