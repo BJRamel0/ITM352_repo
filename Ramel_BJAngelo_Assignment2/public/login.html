@@ -43,10 +43,10 @@
             <h1>Login</h1>
             <p>Please sign in to continue</p>
             <div id="errMsg"></div>
-            <form action="/login" method="POST">
+            <form action="/process_login" method="POST">
                 <input type="text" name="email" id="email" size="40" placeholder="Enter Email" onblur="validateEmail()"><br/>
                 <div id="emailError" class="error-msg"></div>
-                <input type="password" id="password" name="password" size="40" placeholder="enter password">
+                <input type="password" id="password" name="password" size="40" placeholder="enter password" onblur="document.getElementById('errMsg').innerHTML = '';" >
                 <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"><br/>
                 <input type="submit" value="Submit" id="submit"><br/>
                 <div class="register-login-container">

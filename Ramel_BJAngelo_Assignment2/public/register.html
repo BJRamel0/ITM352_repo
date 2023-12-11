@@ -41,11 +41,13 @@
             <h1>Register</h1>
             <div id="errMsg"></div>
             <body>
-                <form action="/register" method="POST">
+                <form action="/process_register" method="POST">
                 
                 <!--Name-->
-                <input type="text" name="firstName" size="40" placeholder="Enter First Name"><br />
-                <input type="text" name="lastName" size="40" placeholder="Enter Last Name"><br />
+                <input type="text" name="firstName" id="firstName" size="40" placeholder="Enter First Name" onblur="validateFirstName()"><br />
+                <div id="firstNameError" class="error-msg"></div>
+                <input type="text" name="lastName" id="lastName" size="40" placeholder="Enter Last Name"><br />
+                <div class="error-msg"><!-- Its just here to make the code visually better  --></div>
 
                 <!--Email-->
                 <input type="text" name="email" id="email" size="40" placeholder="Enter Email" onblur="validateEmail()">
@@ -64,21 +66,6 @@
                 <input type="submit" value="Submit" id="submit">
                 </form>
             </body>
-            <script>
-
-                // Retrieve values from the query parameters or set default values if not present
-                let user_return = request.query.username || "";
-                let errorMessage = request.query.error || "";
-
-                // Set the value of the username field to the value from the query parameters
-                document.getElementById("username").value = "${user_return}";
-    
-                // Display error message if present
-                let errMsg = "${errorMessage}";
-                if (errMsg !== "") {
-                    document.getElementById("errMsg").innerHTML = errMsg;
-                }
-            </script>
         <!-- External JavaScript file for invoice functionality -->
         <script src="register.js" type="module"></script>
         <!-- Note: set script type to "module" to use import -->

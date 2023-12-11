@@ -7,7 +7,7 @@ function populateProductForm() {
     // Check the URL for any error parameters and quantity and display/use them
     let orderData = Number(params.get('orderData'));
     let error = params.get('error');
-
+    
     // Add background image to the body
     document.body.style.backgroundImage = 'url("./images/ScaryRoom.jpeg")';
 

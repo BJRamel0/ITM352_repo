@@ -25,6 +25,12 @@ body {
     padding-top: 10%;
 }
 
+#errMsg {
+    color: red;
+    font-size: 14px;
+    margin-left: 5%;
+}
+
 .not-a-member {
     margin-right: 10px; /* Adjust margin for spacing between text and button */
     font-size: 16px; /* Adjust font size to match the button */
@@ -57,9 +63,10 @@ body {
 .login-container p {
     text-align: left;
     color: black; /* Adjust the color as needed */
-    margin-bottom: 20px; /* Adjust the margin as needed */
     margin-left: 5%;
 }
+
+
 
 .login-container input[type="email"],
 .login-container input[type="password"],

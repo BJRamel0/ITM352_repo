@@ -1,4 +1,17 @@
 /*----------------------register.html---------------------------*/
+// Retrieve error message from the query parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+let user_email = urlParams.get('email') || "";
+let errorMessage = urlParams.get('error') || "";
+
+document.getElementById("email").value = decodeURIComponent(user_email);
+
+// Set the error message in the errMsg div if present
+if (errorMessage) {
+    document.getElementById("errMsg").innerHTML = decodeURIComponent(errorMessage);
+}
+
 function togglePasswordVisibility() {
     let passwordInput = document.getElementById('password');
     let showPasswordCheckbox = document.getElementById('showPassword');
@@ -11,6 +24,7 @@ function togglePasswordVisibility() {
 }
 
 function validateEmail() {
+    document.getElementById("errMsg").innerHTML = "";
     // Get the email input value
     const emailInput = document.getElementById("email").value;
 
