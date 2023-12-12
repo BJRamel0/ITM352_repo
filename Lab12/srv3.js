@@ -11,7 +11,11 @@ app.get('/test', function (req, res) {
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/process_form", function (request, response) {
-    response.send(request.body); 
+    //response.send(request.body); 
+    let q = request.body['qty_textbox'];
+    if (typeof q != 'undefined') {
+        response.send(`Thank you for purchasing ${q} things!`);
+    } else {response.send('Invalid quantity specified.'); }
 });
 
 app.all('*', function (request, response, next) {
