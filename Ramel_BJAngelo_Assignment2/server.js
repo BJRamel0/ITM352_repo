@@ -89,7 +89,7 @@ app.post('/process_purchase', (req, res) => {
         }
     }
 
-    if (user_reg_data && user_reg_data[email] && user_reg_data[email].status === 'active') {
+    if (user_reg_data[email] && user_reg_data[email].status === 'active') {
         if (quantityOrdered.some(isNaN)) {
             res.redirect('/products.html?error=Invalid quantity values');
             return;
@@ -100,7 +100,7 @@ app.post('/process_purchase', (req, res) => {
 
             if (validationErrors !== null) {
                 const errorMessages = encodeURIComponent(JSON.stringify(validationErrors));
-                res.redirect(`/products.html?error=${errorMessages}`);
+                res.redirect(`/products.html?error=${errorMessages}&email=${email}`);
                 return;
             }
 
@@ -114,12 +114,12 @@ app.post('/process_purchase', (req, res) => {
         }
 
         if (!has_aty) {
-            res.redirect('/products.html?error=No quantities selected');
+            res.redirect(`/products.html?error=${"No quantities selected"}&email=${email}`);
         } else if (has_aty) {
             res.redirect(`/invoice.html?quantity=${orderData}&users=${activeUserCount}&email=${email}`);
         } else {
             const errorMessages = encodeURIComponent(JSON.stringify(error));
-            res.redirect(`/products.html?error=${errorMessages}`);
+            res.redirect(`/products.html?error=${errorMessages}&email=${email}`);
         }
     } else {
         if (quantityOrdered.some(isNaN)) {
