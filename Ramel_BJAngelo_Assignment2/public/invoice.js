@@ -1,4 +1,4 @@
-/*----------------------invoice.js---------------------------*/ 
+/*----------------------invoice.js---------------------------*/
 // Extract quantity parameters from the URL
 let params = (new URL(document.location)).searchParams;
 let quantity = [];
@@ -39,7 +39,9 @@ let shipping;
 generateItemRows();
 
 // Calculate shipping based on sub-total
-if (subtotal <= 2000) {
+if (subtotal == 0) {
+    shipping = 0;
+} else if (subtotal <= 2000) {
     shipping = 500;
 } else if (subtotal <= 200000) {
     shipping = 5000;

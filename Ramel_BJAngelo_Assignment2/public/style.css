@@ -7,7 +7,11 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100; /* Only on invoice and product*/
+    height: 100; /* Only on invoice and product */
+}
+
+.buttons-container {
+    margin-top: 20px; /* Adjust the margin-top value as needed */
 }
 
 .error-msg {
@@ -15,6 +19,43 @@ body {
     font-size: 14px; /* Set the font size of the error message */
     margin-top: 5px; /* Add some spacing above the error message */
     margin-left: 5%;
+}
+
+.users {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    color: #fff;
+    text-align: center; /* Center the text within the container */
+}
+
+#activeUsers {
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.welcome-section {
+    margin-left: auto; /* Push the welcome section to the right */
+    margin-right: 15px; /* Add margin to the right for spacing */
+    padding: 10px; /* Add some padding for spacing */
+    color: #fff; /* Text color */
+}
+
+#welcomeText {
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+#Msg {
+    position: fixed;
+    top: 50px; /* Adjust the top value to position the message vertically */
+    left: 50%; /* Center the message horizontally */
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    font-weight: bold; /* Add bold text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow */
 }
 
 .register-login-container {
@@ -65,8 +106,6 @@ body {
     color: black; /* Adjust the color as needed */
     margin-left: 5%;
 }
-
-
 
 .login-container input[type="email"],
 .login-container input[type="password"],
@@ -146,7 +185,6 @@ table {
     height: 600px; /* Adjust the height as needed */
     background-color: transparent;
     cursor: pointer;
-    
 }
 
 .invisible-box a {
@@ -166,7 +204,7 @@ nav {
     overflow: hidden;
     margin: 0;
     padding: 0; /* Add this line to ensure no padding */
-    width: 108%;
+    width: 107%;
 }
 
 nav a {
@@ -238,7 +276,6 @@ form {
 .quantity-container {
     margin-top: 5px; /* Adjusted margin-top for more spacing */
 }
-
 
 .textbox {
     /* Add your specific styles for the textbox here */
@@ -314,7 +351,7 @@ img {
     .bottom-box {
         width: 80%; /* Adjust the width for smaller screens */
         padding: 4vw; /* Adjust padding for smaller screens */
-        font-size: 4vw; /* Adjust font size for smaller screens */
+        font-size: 4vw; /* Adjusted font size for smaller screens */
     }
 
     .product-container {
@@ -325,4 +362,3 @@ img {
         width: 100%;
     }
 }
-

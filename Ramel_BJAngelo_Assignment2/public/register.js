@@ -1,4 +1,4 @@
-/*----------------------register.html---------------------------*/
+/*----------------------register.js---------------------------*/
 // Retrieve error message from the query parameters
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -18,6 +18,7 @@ if (errorMessage) {
     document.getElementById("errMsg").innerHTML = decodeURIComponent(errorMessage);
 }
 
+// Function to validate the first name
 function validateFirstName() {
     document.getElementById("errMsg").innerHTML = "";
     // Get the first name input value
@@ -42,6 +43,7 @@ function validateFirstName() {
     }
 }
 
+// Function to toggle password visibility
 function togglePasswordVisibility() {
     let passwordInput = document.getElementById('password');
     let repeatPasswordInput = document.getElementsByName('repeat_password')[0];
@@ -56,6 +58,7 @@ function togglePasswordVisibility() {
     }
 }
 
+// Function to validate email
 function validateEmail() {
     document.getElementById("errMsg").innerHTML = "";
     // Get the email input value
@@ -78,12 +81,14 @@ function validateEmail() {
     }
 }
 
+// Function to check if email is valid
 function isValidEmail(email) {
     // Regular expression for basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
+// Function to validate passwords
 function validatePasswords() {
     document.getElementById("errMsg").innerHTML = "";
     // Get the password and repeat password input values
@@ -93,16 +98,17 @@ function validatePasswords() {
     // Get the error message container
     const repeatPassError = document.getElementById("repeatPassError");
 
+    // Regular expression for password validation
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,16}$/;
+
     if (passwordRegex.test(passwordInput) || passwordInput == "") {
         PassError.innerHTML = "";
     } else {
         PassError.innerHTML = 'Invalid password format. Password must be 10-16 characters, with at least one lowercase letter, one uppercase letter, one number, and one special character.';
-
     }
 
     // Check if the passwords match
-    if (passwordInput === repeatPasswordInput ||  repeatPasswordInput == "" ) {
+    if (passwordInput === repeatPasswordInput || repeatPasswordInput == "") {
         // Passwords match, hide the error message
         repeatPassError.innerHTML = "";
         // Perform other actions or submit the form
