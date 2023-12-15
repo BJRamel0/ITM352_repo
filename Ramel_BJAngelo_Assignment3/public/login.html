@@ -1,0 +1,101 @@
+<!----------------------login.html--------------------------->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page -->
+    <title>Invoice</title>
+
+    <!-- External stylesheets and JavaScript files -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway" rel="stylesheet">
+
+    <!-- Custom stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- External JavaScript files for product data and login functionality -->
+    <script type="text/javascript" src="/products.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+</head>
+
+<body>
+    <script>
+        // Uncomment this line to set background image dynamically
+        // document.body.style.backgroundImage = 'url("./images/loginBouncer.jpeg")';
+    </script>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Navigation links -->
+        <ul class="navbar-nav">
+            <!-- Home link -->
+            <li class="nav-item">
+                <a class="nav-link active" href="./index.html">Home</a>
+            </li>
+            <!-- Products link -->
+            <li class="nav-item">
+                <a class="nav-link" href="./products.html">Products</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Login container -->
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Please sign in to continue</p>
+        <!-- Display error message if present -->
+        <div id="errMsg"></div>
+
+        <!-- Login form -->
+        <form action="/process_login" method="POST">
+            <!-- Email input -->
+            <input type="text" name="email" id="email" size="40" placeholder="Enter Email" onblur="validateEmail()"><br/>
+            <!-- Display email validation error -->
+            <div id="emailError" class="error-msg"></div>
+
+            <!-- Password input -->
+            <input type="password" id="password" name="password" size="40" placeholder="Enter Password" onblur="document.getElementById('errMsg').innerHTML = '';">
+            <!-- Checkbox to show/hide password -->
+            <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"><br/>
+
+            <!-- Submit button -->
+            <input type="submit" value="Submit" id="submit"><br/>
+
+            <!-- Register and login link -->
+            <div class="register-login-container">
+                <h2 class="not-a-member">Not a member?</h2>
+                <a href="register.html" class="btn btn-link" id="register">Register</a>
+            </div>
+        </form>
+
+        <!-- Script to set email field value and display error message from query parameters -->
+        <script>
+            // Retrieve values from the query parameters or set default values if not present
+            let user_return = request.query.email || "";
+            let errorMessage = request.query.error || "";
+
+            // Set the value of the email field to the value from the query parameters
+            document.getElementById("email").value = "${user_return}";
+
+            // Display error message if present
+            let errMsg = "${errorMessage}";
+            if (errMsg !== "") {
+                document.getElementById("errMsg").innerHTML = errMsg;
+            }
+        </script>
+
+        <!-- External JavaScript file for login functionality -->
+        <script src="login.js" type="module"></script>
+        <!-- Note: set script type to "module" to use import -->
+    </div>
+
+</body>
+
+</html>
