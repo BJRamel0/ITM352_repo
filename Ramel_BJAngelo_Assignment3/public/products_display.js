@@ -5,6 +5,7 @@ let quantity = [];
 let quantityParam = params.get('quantity') || "[]";
 let quantityArray = JSON.parse(decodeURIComponent(quantityParam));
 
+
 // Function to dynamically populate the product form
 function populateProductForm() {
     // Check the URL for any error parameters and quantity and display/use them
@@ -12,6 +13,8 @@ function populateProductForm() {
     let users = params.get('users');
     let error = params.get('error');
     let email = params.get('email') || "";
+    let page = params.get('page') || "";
+    console.log("page = " + page);
 
     if (email != "") {
         document.getElementById("welcomeText").innerHTML = `Welcome, ${decodeURIComponent(email)}!`;
@@ -44,11 +47,12 @@ function populateProductForm() {
     let formHTML = ''; // Blank content of the form to add to
 
     let product_key = "BodyParts";
-    let page = params.get('page');
     if (page !== null && page !== "") {
         product_key = page;
     }
     // Write a loop to print the product information AND then add a quantity text input box for every element of the product array
+    formHTML += `<input type="hidden" class="textbox" id="products_key" value="${product_key}" name="products_key"></input>`;
+
     for (let i in products[product_key]) {
         formHTML += '<div class="product-container">';
         formHTML += `<h3>${products[product_key][i].brand} $${products[product_key][i].price}</h3>`;
@@ -68,7 +72,6 @@ function populateProductForm() {
     formHTML += '<div class="button-container">';
     formHTML += '<input type="submit" value="Add to Cart" class="purchase-btn">';
     formHTML += '</div>';
-
     // Push the form content to the DOM
     form.innerHTML = formHTML;
 }
@@ -82,6 +85,11 @@ window.onload = function () {
             document.getElementById(`quantity${i}`).value = `${quantity[i]}`;
         } 
     }
+
+    if (page !== "") {
+        document.getElementById("products_key").value = page;
+    }
+
 }
 
 // Function to check the quantity textbox

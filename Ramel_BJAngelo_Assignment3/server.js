@@ -183,23 +183,57 @@ app.post('/process_purchase', (req, res) => {
 });
 */
 
+// Function to validate quantity
+function validateQuantity(quantity, availableQuantity) {
+    const errors = [];
+    let quantitys = Number(quantity);
+    errors.length = 0;
+
+    switch (true) {
+        case isNaN(quantitys) || quantitys === "":
+            errors.push("Not a number");
+            break;
+        case quantitys < 0 && !Number.isInteger(quantitys):
+            errors.push("Negative inventory and not an Integer");
+            break;
+        case quantitys < 0:
+            errors.push("Negative inventory");
+            break;
+        case !Number.isInteger(quantitys):
+            errors.push("Not an Integer");
+            break;
+        case quantitys > availableQuantity:
+            errors.push("Insufficient stock");
+            break;
+        default:
+            break;
+    }
+
+    if (errors.length > 0) {
+        return errors;
+    } else {
+        return null;
+    }
+}
+
 app.post('/cart_add', (req, res) => {
     let POST = req.body;
     let products_key = POST['products_key'];
+    console.log('Products key =' + products_key);
     let errorObject = {};
 
     for (let i in products[products_key]) {
         let qty = POST['quantity_textbox'].map(Number);
-
-        let errorMessages = validateQuantity(qty, products[products_key][i].qty_avaliable);
-        if (errorMessages.length > 0) {
+        console.log("qty is" +qty[i]);
+        let errorMessages = validateQuantity(qty[i], products[products_key][i].qty_available);
+        if (errorMessages && Array.isArray(errorMessages) && errorMessages.length > 0) {
             errorObject[`qty${[i]}_error`] = errorMessages.join(', ');
-        }
+        }  
         console.log('error messages are:' + errorMessages);
     }
 
-    console.log("errorObject = " + Object.keys(errorObject)+ " " + Object.keys(errorObject).length);
-    
+    console.log("errorObject = " + Object.keys(errorObject) + " " + Object.keys(errorObject).length);
+
     if (Object.keys(errorObject).length == 0) {
         if (!req.session.cart) {
             req.session.cart = {};
@@ -209,30 +243,47 @@ app.post('/cart_add', (req, res) => {
             req.session.cart[products_key] = [];
         }
 
-        let user_qty;
+        let user_qty = [];
 
         for (let i in products[products_key]) {
-            user_qty.push(POST['quantity_textbox'].map(Number)); 
+            // Use parseInt to convert the entire value to an integer
+            let quantity = parseInt(POST['quantity_textbox'][i], 10);
+            
+            // Check if the conversion was successful
+            if (!isNaN(quantity)) {
+                user_qty.push(quantity);
+            } else {
+                // Handle the case where the conversion fails, e.g., show an error or use a default value
+                console.error(`Invalid quantity value: ${POST['quantity_textbox'][i]}`);
+                // You can decide what to do in case of an error, for now, let's use 0 as a default value
+                user_qty.push(0);
+            }
         }
-
         // Set user_qty in the session 
-		req.session.cart[products_key] = user_qty;
-    
-		// Redirect the user to the appropriate page
-		res.redirect(`/products.html?products_key=${POST['products_key']}`);
-    } else {
-		// Redirect the user to the appropriate page
-		res.redirect(`/products.html?${qs.stringify(POST)}&inputErr`);
-	}
+        req.session.cart[products_key] = user_qty;
+        console.log("cart: " + req.session.cart["BodyParts"]);
+        console.log("cart: " + req.session.cart["Implants"]);
+        console.log("cart: " + req.session.cart["Prosthetics"]);
 
+
+        // Check the value of products_key before redirecting
+        console.log("products_key = " + products_key);
+
+        // Redirect the user to the appropriate page
+        res.redirect(`/products.html?page=${products_key}`);
+    } else {
+        // Redirect the user to the appropriate page
+        res.redirect(`/products.html?${qs.stringify(POST)}&inputErr`);
+    }
 });
+
 
 // Route for handling a POST request to "/process_login"
 app.post('/process_login', (req, res) => {
     let { password, quantities, email } = req.body;
     const error = {};
 
-    const user_data = JSON.parse(fs.readFileSync('user_data.json', 'utf8'));
+    const user_data = JSON.parse(fs.readFileSync(__dirname + '/user_data.json', 'utf8'));
 
     const emailRegex = /\S+@\S+\.\S+/;
     if (!emailRegex.test(email)) {
@@ -253,8 +304,7 @@ app.post('/process_login', (req, res) => {
         return res.redirect('/login.html?error=Email not found&email=' + encodeURIComponent(email));
     }
 
-
-    user_reg_data[email].status = "active";
+    user_data[email].status = "active";
     activeUserCount++;
     fs.writeFileSync(filename, JSON.stringify(user_reg_data), 'utf-8');
 
@@ -262,20 +312,20 @@ app.post('/process_login', (req, res) => {
     let user_cookie = {"email": email, "name": user_data[email]['name']};
 
     //Response with the user's cookie as a JSON string and set expiration
-    res.cookie('user_cookie', JSONstringify(user_cookie), {maxage: 900 * 1000});
+    res.cookie('user_cookie', JSON.stringify(user_cookie), {maxage: 900 * 1000});
     console.log(user_cookie);
 
     // Update the number of active users;
-    req.session.users = Object,keys(status).length;
+    req.session.users = Object.keys(status).length;
     console.log(`Current users: ${Object.keys(status).length} - ${Object.keys(status)}`);
 
 
-    fs.writeFile(__dirname + filename, JSON.stringify(user_data), 'utf-8', (err) => {
+    fs.writeFile(filename, JSON.stringify(user_data), 'utf-8', (err) => {
         if (err) throw err;
         console.log('User data has been updated');
     })
 
-    res.redirect(`/invoice.html?quantity=${orderData}&users=${activeUserCount}&email=${email}`);
+    res.redirect(`/cart.html?`);
 });
 
 // Route for handling a POST request to "/process_register"
@@ -340,7 +390,7 @@ app.post('/process_register', (req, res) => {
         const errorMessage = encodeURIComponent(response_msg);
         res.redirect(`./register.html?error=${response_msg}&firstName=${firstName}&lastName=${lastName}&email=${email}`);
     } else {
-        res.redirect(`./invoice.html?quantity=${orderData}&users=${activeUserCount}&name=${firstName}&email=${email}`);
+        res.redirect(`./cart.html`);
     }
 });
 
@@ -486,7 +536,8 @@ app.post('/process_logout', function (req, res) {
     let email = cookie['email'];
 
     if (user_data[email] && user_data[email].status == "active") {
-        delete staus[email];
+        delete status[email];
+
         user_data[email].status = "inactive";
         response.clearCookie("user_cookie");
 
@@ -499,7 +550,7 @@ app.post('/process_logout', function (req, res) {
                 console.log('User data has been updated!');
                 console.log(user_data);
                 console.log(`User with email ${email} was sucessfully logged out`);
-                redirect('index.html?');
+                res.redirect('index.html?');
             }
         });
 
