@@ -1,57 +1,174 @@
-[
-	{
-		"brand": "Blood 20oz",
-		"price": 299.99,
-		"image": "../images/BloodinaBag.jpeg",
-		"imageName": "20oz Blood in a Bag",
-		"quantityIndex": 0,
-		"qty_available": 300,
-		"qty_sold": 0
+{
+	"BodyParts": [
+		{
+			"brand": "Blood 20oz",
+			"price": 299.99,
+			"image": "../images/BloodinaBag.jpeg",
+			"imageName": "20oz Blood in a Bag",
+			"quantityIndex": 0,
+			"qty_available": 300,
+			"qty_sold": 0
 
-	},
-	{
-		"brand": "Brain",
-		"price": 599.99,
-		"image": "./images/BraininaJar.jpeg",
-		"imageName": "A Brain in a Jar",
-		"quantityIndex": 1,
-		"qty_available": 100,
-		"qty_sold": 0
-	},
-    {
-		"brand": "Eyeball",
-		"price": 1499.99,
-		"image": "../images/EyeballinaJar.jpeg",
-		"imageName": "An Eyeball in a Jar",
-		"quantityIndex": 2,
-		"qty_available": 500,
-		"qty_sold": 0
-	},
-	{
-		"brand": "Kidney",
-		"price": 262000,
-		"image": "../images/KidneyinaJar.jpeg",
-		"imageName": "A Kidney in a Jar",
-		"quantityIndex": 3,
-		"qty_available": 250,
-		"qty_sold": 0
-	},
-    {
-		"brand": "Liver",
-		"price": 557000,
-		"image": "../images/LiverinaJar.jpeg",
-		"imageName": "A Liver in a Jar",
-		"quantityIndex": 4,
-		"qty_available": 300,
-		"qty_sold": 0
-	},
-	{
-		"brand": "Pancreas",
-		"price": 118000,
-		"image": "../images/PancreasinaJar.jpeg",
-		"imageName": "Pancreas in a Bag",
-		"quantityIndex": 5,
-		"qty_available": 600,
-		"qty_sold": 0
-	}
-]
+		},
+		{
+			"brand": "Brain",
+			"price": 599.99,
+			"image": "./images/BraininaJar.jpeg",
+			"imageName": "A Brain in a Jar",
+			"quantityIndex": 1,
+			"qty_available": 100,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Eyeball",
+			"price": 1499.99,
+			"image": "../images/EyeballinaJar.jpeg",
+			"imageName": "An Eyeball in a Jar",
+			"quantityIndex": 2,
+			"qty_available": 500,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Kidney",
+			"price": 262000,
+			"image": "../images/KidneyinaJar.jpeg",
+			"imageName": "A Kidney in a Jar",
+			"quantityIndex": 3,
+			"qty_available": 250,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Liver",
+			"price": 557000,
+			"image": "../images/LiverinaJar.jpeg",
+			"imageName": "A Liver in a Jar",
+			"quantityIndex": 4,
+			"qty_available": 300,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Pancreas",
+			"price": 118000,
+			"image": "../images/PancreasinaJar.jpeg",
+			"imageName": "Pancreas in a Bag",
+			"quantityIndex": 5,
+			"qty_available": 600,
+			"qty_sold": 0
+		}
+	],
+	"Implants": [
+		{
+			"brand": "Brain Implant",
+			"price": 3000,
+			"image": "../images/BrainImplant.jpg",
+			"imageName": "Wires that go into your Brain",
+			"quantityIndex": 0,
+			"qty_available": 200,
+			"qty_sold": 0
+
+		},
+		{
+			"brand": "Silicone Butt",
+			"price": 4000,
+			"image": "./images/ButtImplant.jpg",
+			"imageName": "Silicone Butt Implant",
+			"quantityIndex": 1,
+			"qty_available": 100,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Fake Tooth",
+			"price": 1000,
+			"image": "../images/ToothImplant.jpg",
+			"imageName": "Fake tooth model",
+			"quantityIndex": 2,
+			"qty_available": 300,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Fake Eye",
+			"price": 2000,
+			"image": "../images/EyeImplant.jpg",
+			"imageName": "A single fake eye implant",
+			"quantityIndex": 3,
+			"qty_available": 350,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Hearing Aid",
+			"price": 5000,
+			"image": "../images/HearingAid.jpg",
+			"imageName": "Hearing Aid Device",
+			"quantityIndex": 4,
+			"qty_available": 300,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Pacemaker",
+			"price": 8000,
+			"image": "../images/Pacemaker.webp",
+			"imageName": "Pacemaker Device",
+			"quantityIndex": 5,
+			"qty_available": 100,
+			"qty_sold": 0
+		}
+	],
+	"Prosthetics": [
+		{
+			"brand": "Leg Prosthetic",
+			"price": 5000,
+			"image": "../images/LegPro.jpg",
+			"imageName": "20oz Blood in a Bag",
+			"quantityIndex": 0,
+			"qty_available": 200,
+			"qty_sold": 0
+
+		},
+		{
+			"brand": "Arm Prosthetic",
+			"price": 7000,
+			"image": "./images/ArmPro.jpg",
+			"imageName": "A Brain in a Jar",
+			"quantityIndex": 1,
+			"qty_available": 100,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Hip Prosthetic",
+			"price": 10000,
+			"image": "../images/HipPro.png",
+			"imageName": "An Eyeball in a Jar",
+			"quantityIndex": 2,
+			"qty_available": 300,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Finger Prosthetic",
+			"price": 1000,
+			"image": "../images/FingerPro.jpg",
+			"imageName": "A Kidney in a Jar",
+			"quantityIndex": 3,
+			"qty_available": 350,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Nose Prosthetic",
+			"price": 2000,
+			"image": "../images/NosePro.webp",
+			"imageName": "A Liver in a Jar",
+			"quantityIndex": 4,
+			"qty_available": 300,
+			"qty_sold": 0
+		},
+		{
+			"brand": "Toe Prosthetic",
+			"price": 800,
+			"image": "../images/ToePro.png",
+			"imageName": "Pancreas in a Bag",
+			"quantityIndex": 5,
+			"qty_available": 100,
+			"qty_sold": 0
+		}
+	]		
+
+}

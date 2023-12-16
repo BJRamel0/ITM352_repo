@@ -29,8 +29,14 @@
                 <a class="nav-link active" href="./index.html">Home</a>
             </li>
             <!-- Products link -->
+            <li class="nav-item">  
+                <a class="nav-link" href="./products.html?page=BodyParts">Body Parts</a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link" href="./products.html">Products</a>
+                <a class="nav-link" href="./products.html?page=Implants">Implants</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./products.html?page=Prosthetics">Prosthetics</a>
             </li>
         </ul>
 
@@ -39,12 +45,13 @@
             <span id="activeUsers"></span>
         </div>
         <div class="welcome-section">
-            <span id="welcomeText"></span>
+            <a id="cart" class="nav-link" href="./cart.html">Cart🛒</a>
+            <span id="welcomeText"></span> 
         </div>
     </nav>
 
     <!-- Product form -->
-    <form id="productForm" name="quantity_form" action="/process_purchase" method="POST">
+    <form id="productForm" name="quantity_form" action="/cart_add" method="POST">
         <!-- Dynamic product inputs will be inserted here -->
     </form>
 </body>

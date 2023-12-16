@@ -16,6 +16,8 @@ function populateProductForm() {
     if (email != "") {
         document.getElementById("welcomeText").innerHTML = `Welcome, ${decodeURIComponent(email)}!`;
         document.getElementById("activeUsers").innerHTML = `There is ${decodeURIComponent(users)} active user(s)`;
+    } else {
+        document.getElementById("welcomeText").innerHTML = `<a class="nav-link" href="./login.html">Login</a>`;
     }
 
     if (quantityParam.length > 0) {
@@ -41,16 +43,21 @@ function populateProductForm() {
     const form = document.getElementById('productForm');
     let formHTML = ''; // Blank content of the form to add to
 
+    let product_key = "BodyParts";
+    let page = params.get('page');
+    if (page !== null && page !== "") {
+        product_key = page;
+    }
     // Write a loop to print the product information AND then add a quantity text input box for every element of the product array
-    for (let i in products) {
+    for (let i in products[product_key]) {
         formHTML += '<div class="product-container">';
-        formHTML += `<h3>${products[i].brand} $${products[i].price}</h3>`;
-        formHTML += `<p class="available-line">Available: ${products[i].qty_available}   Sold: ${products[i].qty_sold}</p>`;
-        formHTML += `<img src="${products[i].image}" style="width: 60%" class="img-thumbnail" alt="${products[i].imageName}"/>`;
+        formHTML += `<h3>${products[product_key][i].brand} $${products[product_key][i].price}</h3>`;
+        formHTML += `<p class="available-line">Available: ${products[product_key][i].qty_available}   Sold: ${products[product_key][i].qty_sold}</p>`;
+        formHTML += `<img src="${products[product_key][i].image}" style="width: 60%" class="img-thumbnail" alt="${products[product_key][i].imageName}"/>`;
         formHTML += `
             <label for="quantity_textbox_${i}">Quantity desired:</label>
             <div class="quantity-container">
-                <input type="text" class="textbox" id="quantity${i}" name="quantity_textbox[]" onkeyup="checkQuantityTextbox(this, ${products[i].qty_available}, ${i})">
+                <input type="text" class="textbox" id="quantity${i}" name="quantity_textbox[]" onkeyup="checkQuantityTextbox(this, ${products[product_key][i].qty_available}, ${i})">
                 <br>
                 <span id="quantity_textbox${i}_message">Enter a valid quantity</span>
             </div>`;
@@ -59,7 +66,7 @@ function populateProductForm() {
 
     // Ensure the submit button is part of the form
     formHTML += '<div class="button-container">';
-    formHTML += '<input type="submit" value="Purchase" class="purchase-btn">';
+    formHTML += '<input type="submit" value="Add to Cart" class="purchase-btn">';
     formHTML += '</div>';
 
     // Push the form content to the DOM

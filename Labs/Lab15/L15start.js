@@ -1,28 +1,3 @@
-let express = require('express');
-let app = express();
-
-app.use(express.urlencoded({ extended: true }));
-
-let cookieParser = require('cookie-parser');
-app.use(cookieParser());
-
-let session = require('express-session');
-app.use(session({secret: "MySecretKey", resave: true, saveUninitialized: true}));
-
-app.get('/set_cookie', (request, response) => {
-    response.cookie('username', 'BJ', {maxAge: 10000});
-    response.send('Cookie has been sent with your name');
-})
-
-app.get('/use_cookie', (request, response) => {
-    let username = request.cookies.username;
-    response.send(`Welcome to the Use Cookie page, ${username}.`);
-})
-
-app.get('/use_session', (request, response) => {
-    response.send(`Welcome, your session ID is ${request.session.id}`);
-})
-
 const fs = require('fs');
 //This line imports the Node.js built-in fs (file system) module, which provides methods for interacting with the file system, including reading and writing files.
 
@@ -62,6 +37,11 @@ user_reg_data[username].email = 'newuser@user.com';
 fs.writeFileSync(filename, JSON.stringify(user_reg_data), 'utf-8');
 //This line writes the updated user_reg_data back to the JSON file specified by the filename variable. It uses the fs.writeFileSync method, which is a synchronous operation that writes data to a file.
 //JSON.stringify(user_reg_data) is used to convert the JavaScript object user_reg_data into a JSON-formatted string before writing it to the file.
+
+let express = require('express');
+let app = express();
+
+app.use(express.urlencoded({ extended: true }));
 
 // modified for extra credit 2 to push error message with login prompts
 app.get("/login", function (request, response) {
@@ -104,12 +84,7 @@ app.post("/login", function (request, response) {
     if (typeof user_reg_data[username_entered] != 'undefined') {
         // Check if the password matches with the username
         if (password_entered == user_reg_data[username_entered].password) {
-            //response_msg = `${username_entered} is logged in.`;
-            const userSession = request.session;
-
-            if (!userSession.lastLogin) {
-                //INCOMPLETE
-            }
+            response_msg = `${username_entered} is logged in.`;
         } else {
             response_msg = `Incorrect password.`;
             errors = true;
