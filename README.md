@@ -1,3 +1,1 @@
-# hello-world
-Hello World Test
-My name is BJ Angelo Ramel
+This is my Code Learning Repository. Just a place where I'm honing my skills in HTML, JavaScript, and CSS. You'll find practice code here, focusing on things like for loops, if statements, if-else, and other basic coding stuff. Nothing fancy, just a playground to sharpen my computer science skills.
