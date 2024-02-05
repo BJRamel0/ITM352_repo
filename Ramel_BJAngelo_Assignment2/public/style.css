@@ -1,0 +1,364 @@
+/*----------------------style.css---------------------------*/
+body {
+    max-width: 1400px;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100; /* Only on invoice and product */
+}
+
+.buttons-container {
+    margin-top: 20px; /* Adjust the margin-top value as needed */
+}
+
+.error-msg {
+    color: red; /* Set the color of the error message */
+    font-size: 14px; /* Set the font size of the error message */
+    margin-top: 5px; /* Add some spacing above the error message */
+    margin-left: 5%;
+}
+
+.users {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    color: #fff;
+    text-align: center; /* Center the text within the container */
+}
+
+#activeUsers {
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.welcome-section {
+    margin-left: auto; /* Push the welcome section to the right */
+    margin-right: 15px; /* Add margin to the right for spacing */
+    padding: 10px; /* Add some padding for spacing */
+    color: #fff; /* Text color */
+}
+
+#welcomeText {
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+#Msg {
+    position: fixed;
+    top: 50px; /* Adjust the top value to position the message vertically */
+    left: 50%; /* Center the message horizontally */
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    font-weight: bold; /* Add bold text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+.register-login-container {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    height: 100%; /* Ensure the container takes full height */
+    padding-top: 10%;
+}
+
+#errMsg {
+    color: red;
+    font-size: 14px;
+    margin-left: 5%;
+}
+
+.not-a-member {
+    margin-right: 10px; /* Adjust margin for spacing between text and button */
+    font-size: 16px; /* Adjust font size to match the button */
+    margin: 0; /* Remove default margin */
+    align-self: center; /* Align text both vertically and horizontally within its box */
+}
+
+.login-container {
+    background-color: #F1DEDE;
+    width: 30%;
+    padding: 20px; /* Increased padding for the container */
+    margin: 12vh auto;
+    text-align: left; /* Adjusted text alignment */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    min-height: 50vh;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.login-container h1 {
+    text-align: left;
+    color: black; /* Adjust the color as needed */
+    margin-left: 5%;
+    padding-top: 10%;
+}
+
+.login-container p {
+    text-align: left;
+    color: black; /* Adjust the color as needed */
+    margin-left: 5%;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="text"],
+.login-container input[type="name"] {
+    width: 80%; /* Adjusted width as needed */
+    padding: 10px; /* Adjusted padding for more spacing */
+    margin: 5px 0; /* Adjusted margin for spacing between textboxes */
+    box-sizing: border-box;
+    border: none; /* Removed borders */
+    border-radius: 3px; /* Added a small border-radius for a softer appearance */
+    margin-left: 5%;
+}
+
+.login-container input[type="submit"] {
+    width: 80%; /* Adjusted width as needed */
+    padding: 10px; /* Adjusted padding for more spacing */
+    margin: 15px 0; /* Adjusted margin for spacing between textboxes and button */
+    box-sizing: border-box;
+    border: none; /* Removed borders */
+    border-radius: 5px; /* Added border-radius for curved edges */
+    background-color: #4DA167; /* Red color for the button */
+    color: white; /* Text color */
+    cursor: pointer;
+    margin-top: 4%;
+    margin-left: 5%;
+}
+
+.invoice-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #208E0E;
+    width: 50%;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 20vh; /* Adjusted margin-top */
+    margin-bottom: 20vh; /* Added margin-bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Minimum height to ensure the container is not too small */
+}
+
+table {
+    width: 80%; /* Adjusted width as needed */
+}
+
+.bottom-box {
+    background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity and color as needed */
+    position: fixed;
+    bottom: 5px; /* Adjust the distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    text-align: center;
+    padding: 20px; /* Adjust the padding as needed */
+    font-size: 1.2em; /* Adjusted font size for a bigger text */
+}
+
+.bottom-box p:first-child {
+    font-weight: bold;
+}
+
+.bottom-box p:last-child {
+    font-size: 1.5vw; /* Adjust font size using viewport width */
+    margin-bottom: 1vw; /* Adjust margin using viewport width */
+}
+
+.invisible-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.invisible-box a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation bar styles */
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+    margin: 0;
+    padding: 0; /* Add this line to ensure no padding */
+    width: 107%;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #208E0E; /* Green color for text on hover */
+}
+
+nav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.navbar {
+    padding-left: 20px; /* Adjust the value as needed */
+}
+
+form {
+    margin-top: 20px;
+}
+
+#productForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: no-repeat 200% center;
+    color: black;
+}
+
+.product-container {
+    background-color: black;
+    border: 1px solid black; /* Keep this line for the black border */
+    color: #20C20E;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.product-container h3 {
+    margin-bottom: 3px; /* Adjusted margin-bottom for h3 */
+}
+
+.available-line {
+    margin-bottom: 3px; /* Adjusted margin-bottom for the Available line */
+}
+
+.product-container p {
+    margin-bottom: 10px; /* Adjusted margin-bottom for the paragraph */
+}
+
+.product-container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px; /* Added padding to create an invisible border around the image */
+}
+
+.quantity-container {
+    margin-top: 5px; /* Adjusted margin-top for more spacing */
+}
+
+.textbox {
+    /* Add your specific styles for the textbox here */
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 40%; /* Adjust the width as needed */
+    margin-bottom: 10px;
+    text-align: center; /* Center the text inside the textbox */
+    font-size: 1em; /* Adjusted font size */
+    font-weight: bold; /* Make the text bold */
+}
+
+#quantity_textbox_message {
+    color: #888;
+    font-size: 0.8em;
+}
+
+.button-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; /* Adjusted margin-top */
+    margin-bottom: 60px;
+}
+
+.purchase-btn {
+    width: 30%; /* Make the button take the full width of the container */
+    padding: 15px 30px; /* Adjusted padding for a bigger button */
+    font-size: 1.2em; /* Adjusted font size for a bigger button */
+    background-color: #20C20E; /* Green color */
+    color: white; /* Text color */
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Adjusted margin-top for the button */
+    cursor: pointer;
+}
+
+.purchase-btn:hover {
+    background-color: #208E0E; /* Darker green color on hover */
+}
+
+img {
+    max-width: 1000px;
+    border-radius: 5px;
+}
+
+.img-thumbnail {
+    border: none;
+}
+
+.baller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .product-container {
+        width: calc(50% - 20px);
+    }
+
+    .invoice-container {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .invisible-box {
+        width: 80%; /* Adjust the width for smaller screens */
+        height: 40%; /* Adjust the height for smaller screens */
+        max-height: 300px; /* Set a maximum height if necessary for smaller screens */
+    }
+
+    .bottom-box {
+        width: 80%; /* Adjust the width for smaller screens */
+        padding: 4vw; /* Adjust padding for smaller screens */
+        font-size: 4vw; /* Adjusted font size for smaller screens */
+    }
+
+    .product-container {
+        width: 100%;
+    }
+
+    .invoice-container {
+        width: 100%;
+    }
+}

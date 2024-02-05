@@ -9,6 +9,10 @@ h1, h2 {
   text-align: center;
 }
 
+#brand {
+  text-align: center;
+}
+
 p {
   font-weight: bold;
 }
@@ -17,7 +21,7 @@ p {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  background: url("images/phone_globe.jpg") no-repeat 50% center;
+  background: no-repeat 50% center;
   color: black;
 }
 
